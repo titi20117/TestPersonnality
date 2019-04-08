@@ -1,0 +1,23 @@
+{
+  "name": "projectest",
+  "version": "1.0.0",
+  "description": "\"For people who want to know what about itself\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Fernand_Natalia",
+  "license": "ISC",
+  "dependencies": {
+    "MD5": "^1.3.0",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "md5": "^2.2.1",
+    "nodemon": "^1.18.10",
+    "save": "^2.3.3",
+    "socket.io": "^2.2.0"
+  }
+}

@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "Germania";
+    src: url("../fonts/Germania/GermaniaOne-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Oleo";
+    src: url("../fonts/Oleo/OleoScript-Bold.ttf") format("opentype"),
+            url('../fonts/Oleo/OleoScript-Regular.ttf') format('opentype');
+}
+@font-face {
+    font-family: "OpenSansCondensed";
+    src: url("../fonts/Open_Sans_Condensed/OpenSansCondensed-Light.woff") format('woff'),
+         url('../fonts/Open_Sans_Condensed/OpenSansCondensed-Light.ttf') format('truetype'),
+         url('../fonts/Open_Sans_Condensed/OpenSansCondensed-Bold.ttf') format('truetype'),
+         url('../fonts/Open_Sans_Condensed/OpenSansCondensed-LightItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: "OpenSansCondensedBold";
+    src: url('../fonts/Open_Sans_Condensed/OpenSansCondensed-Bold.ttf') format('truetype'),
+}
+@font-face {
+    font-family: "OpenSansCondensedItalic";
+    src: url('../fonts/Open_Sans_Condensed/OpenSansCondensed-LightItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: "OpenSans";
+    src: url('../fonts/Open_Sans/OpenSans-Regular.ttf') format("opentype");
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    background: url('/assets/img/back2.jpg') no-repeat;
+    -moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%; 
+}
+
+.home-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.home-page__description {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 17%;
+}
+
+.home-page__description__container {
+    display: flex;
+    width: 50%;
+}
+
+.home-page__description__container__title {
+    text-align: justify;
+    background-color: rgba(41, 41, 41, 0.25);
+    line-height: 38px;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    font-family: "OpenSansCondensedItalic";
+}
+
+.home-page__description__container::after {
+    content: '\1F449';
+    position: relative;
+    top: 17%;
+    font-size: 74px;
+    height: 110px;
+}
+
+.home-page__identification {
+    position: relative;
+}
+
+.home-page__identification__form span {
+    color: white;
+    font-weight: 700;
+    font-family: OpenSans;
+    font-size: 25px;
+
+}
+
+.home-page__identification__form input {
+    background-color: #ffffff;
+    height: 35px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+form input[type = "submit"] {
+    position: relative;
+    top: 31px;
+    left: 22%;
+    height: 35px;
+    width: 153px;
+    border-radius: 5px;
+    background-color: #607D8B;
+    font-size: 18px;
+    font-weight: bolder;
+    color: #c3d8e2;
+    cursor: pointer;
+}

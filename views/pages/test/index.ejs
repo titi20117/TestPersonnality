@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Тест на тип личности</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="page-container__header">
+            <div class="page-container__header__title">
+                <span>
+                   
+                </span>
+            </div>
+        </div>
+        <div class="page-container__section">
+            <form action="../response/" method="get">
+                <!-- <div class="page-container__section__con">
+
+                </div> -->
+                    <% data.data_db.forEach(function(data){ %>
+                        
+                        <div class="page-container__section__task">
+                            
+                            <div class="page-container__section__task__request">
+                                <span><%= data.id %>.</span>
+                                <span id="<%= data.id %>" class="page-container__section__task__request__task"><%= data.question %></span>
+                            </div>
+
+                            <div class="page-container__section__task__response">
+                                <label><input type="radio" name="<%= data.name %>" id="<%= data.id %>" class="radio1" required><%= data.firstAnswer %></label>
+                              
+                                <label><input type="radio" name="<%= data.name %>" id="<%= data.id %>.1" class="radio2"><%= data.secondAnswer %></</label>
+                            </div>
+
+                        </div>
+
+                    <% }); %>
+                    <div class="page-container__section__submit">
+                        <!-- <a href="response"> -->
+                            <input type="submit" value="Покажи мне результат!">
+                        <!-- </a> -->
+                    </div>
+            </form>
+            <div class="page-container__section_myModal">
+                    <span class="close">&times;</span>
+                        <img src="" class="modal-content" id="img01">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="http://localhost:1990/socket.io/socket.io.js"></script>
+    <script src="/views/js/client.js"></script>
+</body>
+</html>
