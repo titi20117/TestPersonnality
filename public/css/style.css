@@ -49,6 +49,22 @@ body {
     font-size: 18px;
     color: aqua
 }
+
+.page-container__section__task__bloc-request {
+    display: flex;
+}
+
+.fa-star:before {
+    position: relative;
+    top: 10px;
+    right: 160px;
+    color: #f1d605;
+}
+/* .page-container__section__task__bloc-request fa-star {
+    position: relative;
+    top: 10px;
+} */
+
 .page-container__section__task__request {
     margin: 10px 0 10px 0;
     text-align: center;
