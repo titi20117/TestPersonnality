@@ -1,5 +1,17 @@
 "use strict";
+//creation de la fonction getImportance to set important or not the questions
+let getImportance = () => {
+    let count = 0;
+    let elInputsResponse = document.querySelectorAll(".page-container__section__task__response label input");
+    elInputsResponse.forEach(element => {
+        if (element.getAttribute("data-height")) {
+            count +=1;
+        }
+    });
+    return count/2;
+}
 
+console.log(getImportance());
 
 //find the result of passed test
 (() => {
@@ -19,6 +31,8 @@
     let numberOfQuestions = 20;
     let numberOfGroup = 2;
     let numberOfResponse = 1;
+
+
    
     elBtnSend.addEventListener("click", (event)=> {
         let procentCloleric = 0;
@@ -27,6 +41,10 @@
         let procentMelancholic = 0;
         for (let i = 0; i < elInputsResponse.length; i++) {
             if(elInputsResponse[i].checked == true) {
+                let importance = elInputsResponse[i].getAttribute("data-height");
+                if (importance) {
+                    
+                }
                 let key = elInputsResponse[i].getAttribute("id");
                 switch (key) {
                     case "1":
