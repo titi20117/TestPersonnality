@@ -21,7 +21,7 @@
                     <% data.data_db.forEach(function(data){ %>
                         
                         <div class="page-container__section__task">
-                            <% if (data.importance) { %>
+                            <% if (data.importance == true) { %>
                                 <div class="page-container__section__task__bloc-request">
                                     <span class="fa fa-star" aria-hidden="true"></span>
                                     <div class="page-container__section__task__request">
