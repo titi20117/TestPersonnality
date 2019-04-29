@@ -1,17 +1,5 @@
 "use strict";
 //creation de la fonction getImportance to set important or not the questions
-let getImportance = () => {
-    let count = 0;
-    let elInputsResponse = document.querySelectorAll(".page-container__section__task__response label input");
-    elInputsResponse.forEach(element => {
-        if (element.getAttribute("data-height")) {
-            count +=1;
-        }
-    });
-    return count/2;
-}
-
-console.log(getImportance());
 
 //find the result of passed test
 (() => {
@@ -20,12 +8,26 @@ console.log(getImportance());
     elTitle.innerHTML = "Поехали, " + clientName + "!";
     localStorage.setItem("name", clientName);
 
+    const getImportance = () => {
+        let count = 0;
+        let elInputsResponse = document.querySelectorAll(".page-container__section__task__response label input");
+        elInputsResponse.forEach(element => {
+            if (element.getAttribute("data-height")) {
+                count +=1;
+                console.log(element.getAttribute("data-height"))
+            }
+        });
+        return count/2;
+    }
+    
+    console.log(getImportance());
+
     let taskRequest = document.querySelectorAll(".page-container__section__task__request__task");
     let elInputsResponse = document.querySelectorAll(".page-container__section__task__response label input");
     let elBtnSend = document.querySelector(".page-container__section__submit input");
 
     let getValueResponse = (nbrQuestions, nbrGroup, nbrAnswer) => {
-        return 100/(nbrQuestions * nbrGroup * nbrAnswer); 
+        return 50/(nbrQuestions * nbrGroup * nbrAnswer); 
     }
 
     let numberOfQuestions = 20;
@@ -42,8 +44,8 @@ console.log(getImportance());
         for (let i = 0; i < elInputsResponse.length; i++) {
             if(elInputsResponse[i].checked == true) {
                 let importance = elInputsResponse[i].getAttribute("data-height");
-                if (importance) {
-                    
+                if (elInputsResponse[i].getAttribute("data-height")) {
+                    console.log(true);
                 }
                 let key = elInputsResponse[i].getAttribute("id");
                 switch (key) {
