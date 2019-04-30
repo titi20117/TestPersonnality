@@ -2,9 +2,12 @@ let getValueResponse = (nbrQuestions, nbrGroup, nbrAnswer) => {
     return 50/(nbrQuestions * nbrGroup * nbrAnswer);
 }
 
-const FindProcentphycho = (key, procentCloleric, procentSanguine, 
-    procentPhlegmatic, procentMelancholic, numberOfQuestions, numberOfGroup, numberOfResponse)=> {
-    let arrData = [0,0,0,0];    
+let FindProcentphycho = (key, clol, sang, phleg, melan, numberOfQuestions, numberOfGroup, numberOfResponse)=> {
+    let arrData = [0,0,0,0];
+    let procentCloleric = clol;
+    let procentSanguine = sang;
+    let procentPhlegmatic = phleg;
+    let procentMelancholic = melan;    
     switch (key) {
         case "1":
             procentCloleric += getValueResponse(numberOfQuestions, numberOfGroup, numberOfResponse);
@@ -195,7 +198,7 @@ const FindProcentphycho = (key, procentCloleric, procentSanguine,
         return count/2;
     }
     
-    console.log(getImportance());
+    // console.log(getImportance());
 
     let taskRequest = document.querySelectorAll(".page-container__section__task__request__task");
     let elInputsResponse = document.querySelectorAll(".page-container__section__task__response label input");
@@ -212,7 +215,7 @@ const FindProcentphycho = (key, procentCloleric, procentSanguine,
 
    
     elBtnSend.addEventListener("click", (event)=> {
-        event.preventDefault();
+        // event.preventDefault();
         let procentCloleric = 0;
         let procentSanguine = 0;
         let procentPhlegmatic = 0;
@@ -221,7 +224,7 @@ const FindProcentphycho = (key, procentCloleric, procentSanguine,
             if(elInputsResponse[i].checked == true) {
                 let key = elInputsResponse[i].getAttribute("id");   
                 let importance = elInputsResponse[i].getAttribute("data-height");
-                if (importance == true) {
+                if (importance) {
                     let procents = [];
                     numberOfQuestions = 6;
                     procents = FindProcentphycho(key, procentCloleric, procentSanguine, procentPhlegmatic, 
@@ -239,7 +242,6 @@ const FindProcentphycho = (key, procentCloleric, procentSanguine,
                     procentSanguine = procents2[1];
                     procentPhlegmatic = procents2[2];
                     procentMelancholic = procents2[3];
-                    console.log(procentCloleric);
                 }
             }   
         }
@@ -248,9 +250,9 @@ const FindProcentphycho = (key, procentCloleric, procentSanguine,
         localStorage.setItem("procentSanguine", procentSanguine);
         localStorage.setItem("procentPhlegmatic", procentPhlegmatic);
         localStorage.setItem("procentMelancholic", procentMelancholic);
-        console.log(procentCloleric);
-        console.log(procentSanguine);
-        console.log(procentPhlegmatic);
-        console.log(procentMelancholic);   
+        console.log("procentCloleric", procentCloleric);
+        console.log("sanguine", procentSanguine);
+        console.log("plegmatic", procentPhlegmatic);
+        console.log("Melancholic", procentMelancholic);   
     });
 })();
